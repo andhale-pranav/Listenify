@@ -2,14 +2,23 @@ package spotifyclone;
 
 public class Song {
 
-    public String name;
+    public String title;
 
     public double duration;
 
-    public Song (String name, double duration) {
+    public Song (String title, double duration) {
 
-        this.name = name;
+        this.title = title;
         this.duration = duration;
 
     }
+
+    @Override
+    public String toString() {
+        return "Printing Song {" +
+                "title='" + title + '\'' +
+                ", duration=" + duration +
+                '}';
+    }
+
 }

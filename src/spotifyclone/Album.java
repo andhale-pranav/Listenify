@@ -24,7 +24,7 @@ public class Album {
     public boolean findSongInAlbum(String title) {
 
         for(Song song : songList) {
-            if(song.name.equals(title)) return true;
+            if(song.title.equals(title)) return true;
         }
 
         return false;
@@ -55,10 +55,10 @@ public class Album {
 
         int idx = trackNo - 1;
 
-        if(idx >= 0 && idx < songList.size()) {
-            Song currSong = songList.get(idx);
+        if(idx >= 0 && idx < this.songList.size()) {
+            Song currSong = this.songList.get(idx);
             playList.add(currSong);
-            return "Song " + currSong.name + " with track number " +trackNo+ " added to the playlist " + playList ;
+            return "Song " + currSong.title + " with track number " +trackNo+ " added to the playlist " + playList ;
         }
 
         return "Invalid track number";
@@ -71,18 +71,18 @@ public class Album {
     //add
     public String addSongToPlayList(String title, LinkedList<Song> playList) {
 
-        if(findSongInAlbum(title)){
-            return "Song " + title + " is already present in the playlist";
-        }
+//        if(findSongInAlbum(title)){
+//            return "Song " + title + " is already present in the playlist";
+//        }
 
         for(Song song : songList) {
-            if(song.name.equals(title)){
+            if(song.title.equals(title)){
                 playList.add(song);
-                return "Song " + song.name + " added to the playlist " + playList ;
+                return "Song " + song.title + " added to the playlist " + playList ;
             }
         }
 
-        return "this is not supposed to happen";
+        return "Song \" + title + \" is already present in the playlist";
     }
 
 
